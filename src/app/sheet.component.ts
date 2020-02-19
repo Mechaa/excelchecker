@@ -9,9 +9,8 @@ type AOA = any[][];
   templateUrl: "./sheet.component.html"
 })
 export class SheetJSComponent {
-  data: AOA = [[1, 2], [3, 4]];
+  data: AOA = null;
   wopts: XLSX.WritingOptions = { bookType: "xlsx", type: "array" };
-  fileName: string = "SheetJS.xlsx";
 
   onFileChange(evt: any) {
     /* wire up file reader */
@@ -32,17 +31,5 @@ export class SheetJSComponent {
       console.log(this.data);
     };
     reader.readAsBinaryString(target.files[0]);
-  }
-
-  export(): void {
-    /* generate worksheet */
-    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(this.data);
-
-    /* generate workbook and add the worksheet */
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-
-    /* save to file */
-    XLSX.writeFile(wb, this.fileName);
   }
 }
