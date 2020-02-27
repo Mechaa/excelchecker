@@ -27,7 +27,7 @@ export class ExcelComponent {
       const wsname: string = wb.SheetNames[0];
       const ws: XLSX.WorkSheet = wb.Sheets[wsname];
 
-      /* save data */
+      /* save data as a json*/
       this.data = <AOA>XLSX.utils.sheet_to_json(ws, { header: 1 });
       console.log(this.data);
     };

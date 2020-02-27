@@ -2,7 +2,20 @@ p {
   font-family: Lato;
 }
 table.excelfile > tbody > tr:first-child > td {
-     background-color: black;
-     color:white;
-    font-weight: bold;
+  border-radius: 10px;
+  background: #73AD21;
+  padding: 10px;
+  color: azure
+}
+
+.filepicker {
+  background-color: #73AD21;; /* Green */
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
